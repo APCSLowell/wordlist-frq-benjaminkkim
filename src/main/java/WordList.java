@@ -8,15 +8,22 @@ public class WordList
   public void add(String word) { myList.add(word); }
   public String toString() { return myList.toString(); }
 
-  public int numWordsOfLength(int len)
-  {
-    /* to be implemented in part (a) */
-    
+  public int numWordsOfLength(int len) {
+    int count = 0;
+    for(int i = 0; i < myList.size(); i++) {
+      if(myList.get(i).length() == len) {
+        count++;
+      }
+    }
+    return count;
   }
 
-  public void removeWordsOfLength(int len)
-  {
-    /* to be implemented in part (b) */
-
+  public void removeWordsOfLength(int len) {
+    for(int i = 0; i < myList.size(); i++) {
+      if(myList.get(i).length() == len) {
+        myList.remove(i);
+        i--;
+      }
+    }
   }
 }
